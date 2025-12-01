@@ -20,7 +20,7 @@
       font-family: 'Cormorant Garamond', serif;
     }
 
-    /* ULTRA-SLIM HEADER */
+    /* Slim header */
     header {
       text-align:center;
       padding:12px 20px;
@@ -41,7 +41,7 @@
       font-weight:500;
     }
 
-    /* NEW CONTACT-IN-HEADER */
+    /* Contact line in header */
     .header-contact {
       margin-top:6px;
       font-size:20px;
@@ -92,7 +92,6 @@
       font-weight:600;
     }
 
-    /* Responsive */
     @media (max-width:600px) {
       header { padding:10px 10px; }
       .logo { max-width:110px; }
@@ -105,12 +104,12 @@
 <body>
 
 <header>
-  <img src="public/larkins_logo_transparent.png" class="logo" alt="Larkins Logo">
+  <!-- FIXED IMAGE PATHS: assume files are beside index.html -->
+  <img src="larkins_logo_transparent.png" class="logo" alt="Larkins Logo">
   <p class="tagline">Fresh • Local • Hearty</p>
 
-  <!-- NEW CLICK-TO-CALL IN HEADER -->
   <p class="header-contact">
-    <a href="tel:07902006812">📞 07902 006812</a>
+    Contact us: <a href="tel:07902006812">📞 07902 006812</a>
   </p>
 </header>
 
@@ -126,9 +125,10 @@
   <h2>Our Menu</h2>
   <p>Here is our full food menu:</p>
 
-  <img src="public/MainMenu-backwall.jpeg" class="menu-img" alt="Larkins Menu">
+  <!-- LANDSCAPE MENU IMAGE -->
+  <img src="MainMenu-backwall.jpeg" class="menu-img" alt="Larkins Menu">
 
-  <a href="public/MainMenu-backwall.jpeg" class="btn-download" download>
+  <a href="MainMenu-backwall.jpeg" class="btn-download" download>
     📄 Download Menu
   </a>
 </div>
@@ -154,13 +154,6 @@
 
   <a class="btn-download" href="https://www.google.com/maps/dir/?api=1&destination=Reeves+Way+Chestfield+Whitstable+CT5" target="_blank">
     🧭 Get Directions
-  </a>
-</div>
-
-<div class="section">
-  <h2>Contact Us</h2>
-  <a href="tel:07902006812" class="btn-download" style="background:white; color:#4b3234;">
-    📞 07902 006812
   </a>
 </div>
 
