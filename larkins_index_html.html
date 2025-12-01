@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Larkins Snack Bar | Whitstable</title>
+
+  <meta name="description" content="Larkins Snack Bar – freshly prepared hot and cold food served daily in Whitstable. Breakfasts, burgers, toasties, wraps, cold lunches, hot dogs, and more." />
+  <meta name="keywords" content="food near me, breakfast whitstable, hot food whitstable, takeaway whitstable, lunch whitstable, snack bar chestfield, larkins whitstable" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Nunito:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f7f3f3;
+      color: #2b1f21;
+      font-family: 'Inter', sans-serif;
+      animation: fadePage 0.6s ease;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: #4b3234;
+      color: white;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    .logo {
+      max-width: 260px;
+      display: block;
+      margin: auto;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: translateY(-6px);
+      filter: brightness(1.1);
+    }
+
+    .tagline {
+      margin-top: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* Sections */
+    .section {
+      background: white;
+      border: 2px solid #d2bcbc;
+      border-radius: 16px;
+      margin: 25px auto;
+      padding: 30px;
+      max-width: 1000px;
+      animation: fadeIn 0.8s ease;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 26px;
+      color: #4b3234;
+      border-bottom: 3px solid #d2bcbc;
+      padding-bottom: 8px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    /* Menu Image */
+    .menu-img {
+      width: 100%;
+      border: 2px solid #d2bcbc;
+      border-radius: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .menu-img:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      border-color: #b49a9a;
+    }
+
+    /* Buttons */
+    .btn-download, .btn-directions {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 22px;
+      font-weight: bold;
+      background: #4b3234;
+      color: white;
+      text-decoration: none;
+      border: 2px solid #d2bcbc;
+      border-radius: 12px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .btn-download:hover,
+    .btn-directions:hover {
+      background: #3c2728;
+      transform: translateY(-4px);
+    }
+
+    /* Map */
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: 2px solid #d2bcbc;
+      border-radius: 16px;
+    }
+
+    /* Sticky call bar */
+    .call-sticky {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      background: #4b3234;
+      color: white;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      z-index: 999;
+    }
+
+    .call-sticky a {
+      text-decoration: none;
+      color: white;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      header { padding: 25px 10px; }
+      .logo { max-width: 180px; }
+      .section { padding: 20px; margin: 12px; }
+      h2 { font-size: 22px; }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadePage {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="/larkins-logo.png" class="logo" alt="Larkins Snack Bar Logo">
+  <p class="tagline">Fresh • Local • Hearty</p>
+</header>
+
+<div class="section">
+  <h2>Welcome to Larkins Snack Bar</h2>
+  <p>
+    Freshly prepared hot and cold food served daily in Whitstable, crafted with quality ingredients and generous portions.
+    We pride ourselves on offering warm, friendly service and a welcoming atmosphere — whether you’re one of our regulars or a first-time visitor.
+    From hearty breakfasts to satisfying lunches, we're here to serve great food at great value.
+  </p>
+</div>
+
+<div class="section">
+  <h2>Our Menu</h2>
+  <p>Here is our full food menu:</p>
+
+  <!-- Main Menu Image -->
+  <img src="/MainMenu-tall.jpg" class="menu-img" alt="Larkins Snack Bar Menu">
+
+  <!-- PDF Download -->
+  <a href="/Larkins-Menu-Mobile.pdf" class="btn-download" download>📄 Download Menu (PDF)</a>
+</div>
+
+<div class="section">
+  <h2>Opening Hours</h2>
+  <p>
+    Mon–Sat: <strong>7:00am – 2:00pm</strong><br>
+    Sunday: <strong>Closed</strong>
+  </p>
+</div>
+
+<div class="section">
+  <h2>Find Us</h2>
+  <p><strong>Address:</strong> Reeves Way, Chestfield, Whitstable CT5, UK</p>
+  <iframe loading="lazy" src="https://www.google.com/maps?q=Larkins+Snack+Bar+Whitstable&output=embed"></iframe>
+  <a class="btn-directions" href="https://www.google.com/maps/dir/?api=1&destination=Reeves+Way+Chestfield+Whitstable+CT5" target="_blank">🧭 Get Directions</a>
+</div>
+
+<div class="section">
+  <h2>Contact Us</h2>
+  <p>For orders or enquiries:</p>
+  <a href="tel:07902006812" class="btn-download" style="background:white; color:#4b3234; border-color:#4b3234;">
+    📞 07902 006812
+  </a>
+</div>
+
+<div class="call-sticky">
+  <a href="tel:07902006812">📞 Call Now – 07902 006812</a>
+</div>
+
+</body>
+</html>
