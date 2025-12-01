@@ -5,172 +5,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Larkins Snack Bar | Whitstable</title>
 
-  <meta name="description" content="Larkins Snack Bar – freshly prepared hot and cold food served daily in Whitstable. Breakfasts, burgers, toasties, wraps, cold lunches, hot dogs, and more." />
-  <meta name="keywords" content="food near me, breakfast whitstable, hot food whitstable, takeaway whitstable, lunch whitstable, snack bar chestfield, larkins whitstable" />
-  <meta name="robots" content="index, follow" />
+  <!-- SEO -->
+  <meta name="description" content="Larkins Snack Bar – Freshly made hot and cold food in Whitstable. Breakfasts, burgers, sandwiches, toasties, and more.">
+  <meta name="keywords" content="food near me, hot food Whitstable, takeaway Whitstable, breakfast Whitstable, snack bar Chestfield, Larkins Snack Bar">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Nunito:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: #f7f3f3;
-      color: #2b1f21;
+      margin:0;
+      padding:0;
       font-family: 'Inter', sans-serif;
-      animation: fadePage 0.6s ease;
+      background:#f7f3f3;
+      color:#2b1f21;
     }
 
-    /* Header */
     header {
-      text-align: center;
-      padding: 60px 20px;
-      background: #4b3234;
-      color: white;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
+      text-align:center;
+      padding:60px 20px;
+      background:#4b3234;
+      color:white;
+      border-bottom-left-radius:20px;
+      border-bottom-right-radius:20px;
+      animation: fadeIn 1s ease;
     }
 
     .logo {
-      max-width: 260px;
-      display: block;
-      margin: auto;
+      max-width:260px;
+      display:block;
+      margin:auto;
       transition: transform 0.3s ease, filter 0.3s ease;
     }
-
     .logo:hover {
       transform: translateY(-6px);
       filter: brightness(1.1);
     }
 
     .tagline {
-      margin-top: 12px;
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 1px;
+      margin-top:10px;
+      font-size:18px;
+      letter-spacing:1px;
+      font-weight:600;
     }
 
-    /* Sections */
     .section {
-      background: white;
-      border: 2px solid #d2bcbc;
-      border-radius: 16px;
-      margin: 25px auto;
-      padding: 30px;
-      max-width: 1000px;
-      animation: fadeIn 0.8s ease;
+      background:white;
+      border:2px solid #d2bcbc;
+      margin:25px auto;
+      padding:30px;
+      max-width:1000px;
+      border-radius:16px;
+      animation: fadeIn 1.2s ease;
     }
 
     h2 {
-      margin-top: 0;
-      font-size: 26px;
-      color: #4b3234;
-      border-bottom: 3px solid #d2bcbc;
-      padding-bottom: 8px;
+      margin-top:0;
+      font-size:26px;
+      color:#4b3234;
+      border-bottom:3px solid #d2bcbc;
+      padding-bottom:8px;
     }
 
-    p {
-      line-height: 1.6;
-    }
-
-    /* Menu Image */
-    .menu-img {
-      width: 100%;
-      border: 2px solid #d2bcbc;
-      border-radius: 16px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-
-    .menu-img:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-      border-color: #b49a9a;
-    }
+    p { line-height:1.6; }
 
     /* Buttons */
     .btn-download, .btn-directions {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 22px;
-      font-weight: bold;
-      background: #4b3234;
-      color: white;
-      text-decoration: none;
-      border: 2px solid #d2bcbc;
-      border-radius: 12px;
-      transition: transform 0.3s ease, background 0.3s ease;
+      display:inline-block;
+      background:#4b3234;
+      color:white;
+      padding:12px 22px;
+      text-decoration:none;
+      font-weight:bold;
+      border:2px solid #d2bcbc;
+      margin-top:15px;
+      transition: transform 0.2s ease, background 0.2s ease;
     }
-
-    .btn-download:hover,
-    .btn-directions:hover {
-      background: #3c2728;
+    .btn-download:hover, .btn-directions:hover {
       transform: translateY(-4px);
+      background:#3c2728;
     }
 
-    /* Map */
+    /* Menu image */
+    .menu-img {
+      width:100%;
+      border:2px solid #d2bcbc;
+      border-radius:16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .menu-img:hover {
+      transform: translateY(-6px);
+      box-shadow:0 8px 20px rgba(0,0,0,0.25);
+      border-color:#b49a9a;
+    }
+
+    /* Google Map */
     iframe {
-      width: 100%;
-      height: 350px;
-      border: 2px solid #d2bcbc;
-      border-radius: 16px;
+      width:100%;
+      height:350px;
+      border:2px solid #d2bcbc;
+      border-radius:16px;
     }
 
-    /* Sticky call bar */
+    /* Sticky Call Button */
     .call-sticky {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      background: #4b3234;
-      color: white;
-      padding: 15px;
-      font-size: 18px;
-      font-weight: bold;
-      z-index: 999;
+      position:fixed;
+      bottom:0;
+      left:0;
+      width:100%;
+      background:#4b3234;
+      color:white;
+      text-align:center;
+      padding:15px;
+      font-size:18px;
+      font-weight:bold;
+      z-index:999;
     }
-
-    .call-sticky a {
-      text-decoration: none;
-      color: white;
-    }
+    .call-sticky a { color:white; text-decoration:none; }
 
     /* Mobile */
-    @media (max-width: 600px) {
-      header { padding: 25px 10px; }
-      .logo { max-width: 180px; }
-      .section { padding: 20px; margin: 12px; }
-      h2 { font-size: 22px; }
+    @media (max-width:600px) {
+      header { padding:25px 10px; }
+      .logo { max-width:160px; }
+      .section { margin:12px; padding:20px; }
+      h2 { font-size:22px; }
     }
 
-    /* Animations */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from { opacity:0; transform: translateY(20px); }
+      to { opacity:1; transform: translateY(0); }
     }
-
-    @keyframes fadePage {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-
   </style>
 </head>
-
 <body>
 
 <header>
-  <img src="/larkins-logo.png" class="logo" alt="Larkins Snack Bar Logo">
+  <img src="larkins_logo_transparent.png" alt="Larkins Logo" class="logo">
   <p class="tagline">Fresh • Local • Hearty</p>
 </header>
 
 <div class="section">
   <h2>Welcome to Larkins Snack Bar</h2>
   <p>
-    Freshly prepared hot and cold food served daily in Whitstable, crafted with quality ingredients and generous portions.
-    We pride ourselves on offering warm, friendly service and a welcoming atmosphere — whether you’re one of our regulars or a first-time visitor.
-    From hearty breakfasts to satisfying lunches, we're here to serve great food at great value.
+    Freshly prepared hot and cold food served daily in Whitstable, crafted with quality ingredients and a commitment to generous, honest portions.
+    We pride ourselves on offering warm, friendly service and a welcoming atmosphere for all customers — from regular locals to first-time visitors.
+    Whether you’re grabbing breakfast on the go or stopping by for a hearty lunch, we’re here to serve great food at great value.
   </p>
 </div>
 
@@ -178,11 +157,10 @@
   <h2>Our Menu</h2>
   <p>Here is our full food menu:</p>
 
-  <!-- Main Menu Image -->
-  <img src="/MainMenu-tall.jpg" class="menu-img" alt="Larkins Snack Bar Menu">
+  <!-- ⭐ NEW ENHANCED MENU IMAGE -->
+  <img src="MainMenu-tall-enhanced.jpg" alt="Larkins Menu" class="menu-img">
 
-  <!-- PDF Download -->
-  <a href="/Larkins-Menu-Mobile.pdf" class="btn-download" download>📄 Download Menu (PDF)</a>
+  <a href="Larkins-Menu-Mobile.pdf" class="btn-download" download>📄 Download Menu (PDF)</a>
 </div>
 
 <div class="section">
