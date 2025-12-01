@@ -5,87 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Larkins Snack Bar | Whitstable</title>
 
+  <meta name="description" content="Larkins Snack Bar – Freshly prepared hot and cold food served daily in Whitstable. Famous for hearty portions, friendly service, and great value.">
+  <meta name="keywords" content="food near me, hot food Whitstable, takeaway Whitstable, breakfast Whitstable, snack bar Chestfield, Larkins Snack Bar">
+
   <!-- Logo-style font -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     body {
-      margin: 0;
-      padding: 0;
+      margin:0;
+      padding:0;
+      background:#f7f3f3;
+      color:#2b1f21;
       font-family: 'Cormorant Garamond', serif;
-      background: #f7f3f3;
-      color: #2b1f21;
-      font-size: 20px;
     }
 
-    /* SLIMMER HEADER */
+    /* ULTRA-SLIM HEADER */
     header {
-      text-align: center;
-      padding: 25px 20px;     /* reduced height */
-      background: #4b3234;
-      color: white;
+      text-align:center;
+      padding:12px 20px;
+      background:#4b3234;
+      color:white;
     }
 
-    /* LOGO FIXED */
     .logo {
-      max-width: 200px;       /* slightly smaller for balance */
-      display: block;
-      margin: auto;
+      max-width:140px;
+      display:block;
+      margin:auto;
     }
 
     .tagline {
-      margin-top: 6px;
-      font-size: 20px;
-      letter-spacing: 1px;
-      font-weight: 500;
+      margin-top:4px;
+      font-size:18px;
+      letter-spacing:1px;
+      font-weight:500;
+    }
+
+    /* NEW CONTACT-IN-HEADER */
+    .header-contact {
+      margin-top:6px;
+      font-size:20px;
+      font-weight:600;
+    }
+    .header-contact a {
+      color:#ffffff;
+      text-decoration:none;
+    }
+    .header-contact a:hover {
+      text-decoration:underline;
     }
 
     .section {
-      background: white;
-      border: 2px solid #d2bcbc;
-      margin: 20px auto;
-      padding: 25px;
-      max-width: 1000px;
-      border-radius: 16px;
+      background:white;
+      border:2px solid #d2bcbc;
+      margin:25px auto;
+      padding:30px;
+      max-width:1000px;
+      border-radius:14px;
     }
 
-    /* MENU IMAGE FULL WIDTH */
+    h2 {
+      margin-top:0;
+      font-size:30px;
+      color:#4b3234;
+      border-bottom:2px solid #d2bcbc;
+      padding-bottom:6px;
+      font-weight:600;
+    }
+
     .menu-img {
-      width: 100%;
-      height: auto;
-      border-radius: 14px;
-      border: 2px solid #d2bcbc;
-      margin-top: 15px;
-      display: block;
+      width:100%;
+      border-radius:10px;
+      border:2px solid #d2bcbc;
+      margin-top:15px;
     }
 
     .btn-download {
-      display: inline-block;
-      background: #4b3234;
-      color: white;
-      padding: 10px 22px;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-top: 20px;
-      font-weight: 600;
+      display:inline-block;
+      background:#4b3234;
+      color:white;
+      padding:12px 20px;
+      border-radius:6px;
+      text-decoration:none;
+      margin-top:15px;
+      border:2px solid #d2bcbc;
+      font-weight:600;
     }
 
-    .call-sticky {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: #4b3234;
-      text-align: center;
-      padding: 15px;
-      font-size: 20px;
-      font-weight: 600;
-      z-index: 100;
-    }
-
-    .call-sticky a {
-      color: white;
-      text-decoration: none;
+    /* Responsive */
+    @media (max-width:600px) {
+      header { padding:10px 10px; }
+      .logo { max-width:110px; }
+      .section { margin:15px; padding:20px; }
+      h2 { font-size:24px; }
     }
   </style>
 </head>
@@ -93,43 +105,63 @@
 <body>
 
 <header>
-  <img src="larkins_logo_transparent.png" class="logo" alt="Larkins Logo" />
+  <img src="public/larkins_logo_transparent.png" class="logo" alt="Larkins Logo">
   <p class="tagline">Fresh • Local • Hearty</p>
+
+  <!-- NEW CLICK-TO-CALL IN HEADER -->
+  <p class="header-contact">
+    <a href="tel:07902006812">📞 07902 006812</a>
+  </p>
 </header>
+
+<div class="section">
+  <h2>Welcome to Larkins Snack Bar</h2>
+  <p>
+    Freshly prepared hot and cold food served daily in Whitstable, crafted with quality ingredients and a commitment to generous, honest portions. 
+    We are proud to offer warm, friendly service and a welcoming atmosphere to every customer — whether you're a regular local or visiting for the first time.
+  </p>
+</div>
 
 <div class="section">
   <h2>Our Menu</h2>
   <p>Here is our full food menu:</p>
 
-  <img src="menu-landscape.jpg" class="menu-img" alt="Larkins Menu">
+  <img src="public/MainMenu-backwall.jpeg" class="menu-img" alt="Larkins Menu">
 
-  <a href="menu-landscape.jpg" class="btn-download" download>
+  <a href="public/MainMenu-backwall.jpeg" class="btn-download" download>
     📄 Download Menu
   </a>
 </div>
 
 <div class="section">
   <h2>Opening Hours</h2>
-  <p>Mon–Sat: <strong>7:00am – 2:00pm</strong><br>Sunday: <strong>Closed</strong></p>
+  <p>
+    Mon–Sat: <strong>7:00am – 2:00pm</strong><br>
+    Sunday: <strong>Closed</strong>
+  </p>
 </div>
 
 <div class="section">
   <h2>Find Us</h2>
-  <iframe loading="lazy"
-          src="https://www.google.com/maps?q=Larkins+Snack+Bar+Whitstable&output=embed"
-          width="100%" height="300"
-          style="border:2px solid #d2bcbc; border-radius:16px;"></iframe>
+  <p><strong>Address:</strong> Reeves Way, Chestfield, Whitstable CT5, UK</p>
+
+  <iframe
+    width="100%" height="350"
+    style="border:2px solid #d2bcbc; border-radius:10px;"
+    loading="lazy"
+    src="https://www.google.com/maps?q=Larkins+Snack+Bar+Whitstable&output=embed">
+  </iframe>
+
+  <a class="btn-download" href="https://www.google.com/maps/dir/?api=1&destination=Reeves+Way+Chestfield+Whitstable+CT5" target="_blank">
+    🧭 Get Directions
+  </a>
 </div>
 
 <div class="section">
   <h2>Contact Us</h2>
-  <a href="tel:07902006812" class="btn-download" style="background:white; color:#4b3234; border:2px solid #4b3234;">
+  <a href="tel:07902006812" class="btn-download" style="background:white; color:#4b3234;">
     📞 07902 006812
   </a>
-</div>
-
-<div class="call-sticky">
-  <a href="tel:07902006812">📞 Call Now – 07902 006812</a>
 </div>
 
 </body>
