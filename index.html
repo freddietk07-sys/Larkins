@@ -18,23 +18,30 @@
             background-color: #5e3b3b;
             color: white;
             text-align: center;
-            padding: 15px 20px 10px 20px; /* slimmer */
+            padding: 5px 20px; /* reduced padding */
+            height: 150px;     /* fixed height */
+            overflow: hidden;  /* stop stretching */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .logo {
             width: 340px;
-            margin-bottom: 5px;
+            max-height: 100px; /* fits header */
+            object-fit: contain;
+            margin: 0 auto;
         }
 
         .tagline {
-            font-size: 26px;
-            margin-top: -10px;
+            font-size: 22px;
+            margin-top: -5px;
             font-weight: 500;
         }
 
         .contact {
-            font-size: 15px;
-            margin-top: 5px;
+            font-size: 14px;
+            margin-top: 3px;
         }
 
         .contact a {
@@ -179,7 +186,7 @@
 <section>
     <h2>Find Us</h2>
 
-    <!-- UPDATED MAP FOR LARKINS GRILL, REEVES WAY, CHESTFIELD, WHITSTABLE CT5 3QS -->
+    <!-- UPDATED MAP -->
     <iframe 
         class="map-frame"
         src="https://www.google.com/maps?q=Larkins+Grill+Reeves+Way+Chestfield+Whitstable+CT5+3QS&output=embed"
@@ -192,12 +199,9 @@
 
 <footer>
     <div class="footer-box">
-
-        <!-- Hygiene Badge -->
         <img src="IMG_8481.webp"
              alt="Food Hygiene Rating 5"
              style="height:90px; border-radius:8px;">
-
     </div>
 
     <p>© 2024 Larkins Grill</p>
