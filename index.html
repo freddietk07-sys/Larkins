@@ -55,6 +55,7 @@
         }
 
         h2 {
+            font-family: "Georgia", serif;
             margin-top: 0;
             color: #4a3a3a;
         }
@@ -77,44 +78,35 @@
         }
 
         /* MAP */
-        iframe {
+        #map {
             width: 100%;
             height: 350px;
-            border: 0;
             border-radius: 10px;
+            border: 2px solid #d3c5c5;
         }
 
         /* FOOTER */
         footer {
-            background: #5e3b3b;
-            color: white;
+            background-color: #5e3b3b;
             padding: 25px;
             margin-top: 40px;
         }
 
-        .footer-container {
+        footer p {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .footer-box {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 40px;
             justify-content: center;
             flex-wrap: wrap;
         }
-
-        .hygiene-badge {
-            width: 150px;
-            border-radius: 6px;
-        }
-
-        @media (max-width: 600px) {
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
     </style>
-
-    <!-- ElfSight Google Reviews Script -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
 </head>
 
 <body>
@@ -138,7 +130,8 @@
 
 <section>
     <h2>Our Menu</h2>
-    <p>Here is our full food menu:</p>
+
+    <p>Here is our full food menu. Please note that all menu prices are subject to change and may vary at the point of purchase:</p>
 
     <img src="menu-landscape.jpg" alt="Larkins Menu" class="menu-image">
 
@@ -147,36 +140,55 @@
 
 <section>
     <h2>Opening Hours</h2>
-    <p>
-        <strong>Mon–Sat:</strong> 7:00am – 2:00pm<br>
-        <strong>Sunday:</strong> Closed
-    </p>
+    <p><strong>Mon–Sat:</strong> 7:00am – 2:00pm<br>
+    <strong>Sunday:</strong> Closed</p>
 </section>
 
 <section>
     <h2>Find Us</h2>
-
-    <!-- Google Map Embed -->
-    <iframe
-        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJyUOJbpU12UcRXeGWcneX70Y&key=YOUR_API_KEY_HERE"
-        allowfullscreen
-        loading="lazy">
-    </iframe>
+    <div id="map"></div>
 </section>
 
 <footer>
-    <div class="footer-container">
+    <div class="footer-box">
 
         <!-- Hygiene Badge -->
-        <img src="IMG_8481.webp" alt="Food Hygiene Rating 5" class="hygiene-badge">
+        <img src="IMG_8481.webp"
+             alt="Food Hygiene Rating 5"
+             style="height:90px; border-radius:8px;">
 
-        <!-- ElfSight Reviews -->
-        <div style="max-width: 280px;">
-            <div class="elfsight-app-0dc516b7-f6ce-4592-9cdd-749ac808b94b" data-elfsight-app-lazy></div>
+        <!-- Google Reviews (Trustindex) -->
+        <div style="min-width:260px;">
+            <script defer async src="https://cdn.trustindex.io/loader.js?26894895980a5129d4061a4bd5c"></script>
+            <div class="ti-widget" data-ti-widget-id="26894895980a5129d4061a4bd5c"></div>
         </div>
 
     </div>
+
+    <p>© 2024 Larkins Grill</p>
 </footer>
+
+<!-- GOOGLE MAP SCRIPT -->
+<script>
+    function initMap() {
+        const larkins = { lat: 51.360329, lng: 1.023056 };
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: larkins,
+        });
+
+        new google.maps.Marker({
+            position: larkins,
+            map: map,
+            title: "Larkins Grill",
+        });
+    }
+</script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALtxdYgdLy70GQs_r6S_DWuyCCckuyhbk&callback=initMap">
+</script>
 
 </body>
 </html>
