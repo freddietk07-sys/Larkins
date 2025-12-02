@@ -18,22 +18,22 @@
             background-color: #5e3b3b;
             color: white;
             text-align: center;
-            padding: 30px 20px 25px 20px;
+            padding: 15px 20px 10px 20px; /* much slimmer */
         }
 
         .logo {
-            width: 220px;
-            margin-bottom: 10px;
+            width: 280px;  /* larger logo */
+            margin-bottom: 5px;
         }
 
         .tagline {
-            font-size: 30px;
-            margin-top: -25px;
+            font-size: 26px;
+            margin-top: -10px;
             font-weight: 500;
         }
 
         .contact {
-            font-size: 16px;
+            font-size: 15px;
             margin-top: 5px;
         }
 
@@ -60,6 +60,7 @@
             color: #4a3a3a;
         }
 
+        /* MENU IMAGE */
         .menu-image {
             width: 100%;
             border-radius: 10px;
@@ -106,6 +107,19 @@
             justify-content: center;
             flex-wrap: wrap;
         }
+
+        /* TRUSTINDEX WIDGET SPACING */
+        .review-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .review-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #3a2a2a;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -119,6 +133,14 @@
     </div>
 </header>
 
+<section class="review-section">
+    <div class="review-title">⭐⭐⭐⭐⭐ Leave us a review!</div>
+
+    <!-- TRUSTINDEX GOOGLE REVIEWS WIDGET (FULL WIDTH) -->
+    <script defer async src="https://cdn.trustindex.io/loader.js?26894895980a5129d4061a4bd5c"></script>
+    <div class="ti-widget" data-ti-widget-id="26894895980a5129d4061a4bd5c"></div>
+</section>
+
 <section>
     <h2>Welcome to Larkins Grill</h2>
     <p>
@@ -131,7 +153,7 @@
 <section>
     <h2>Our Menu</h2>
 
-    <p>Here is our full food menu. Please note that all menu prices are subject to change and may vary at the point of purchase:</p>
+    <p>Here is our full food menu:</p>
 
     <img src="menu-landscape.jpg" alt="Larkins Menu" class="menu-image">
 
@@ -157,12 +179,6 @@
              alt="Food Hygiene Rating 5"
              style="height:90px; border-radius:8px;">
 
-        <!-- Google Reviews (Trustindex) -->
-        <div style="min-width:260px;">
-            <script defer async src="https://cdn.trustindex.io/loader.js?26894895980a5129d4061a4bd5c"></script>
-            <div class="ti-widget" data-ti-widget-id="26894895980a5129d4061a4bd5c"></div>
-        </div>
-
     </div>
 
     <p>© 2024 Larkins Grill</p>
@@ -187,7 +203,7 @@
 </script>
 
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALtxdYgdLy70GQs_r6S_DWuyCCckuyhbk&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADvJbOZuzagdFsQ90I5MmmLKzBgkdQ_co&callback=initMap">
 </script>
 
 </body>
