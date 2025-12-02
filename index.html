@@ -13,38 +13,42 @@
             color: #3a2a2a;
         }
 
-                /* HEADER */
+        /* HEADER */
         header {
             background-color: #5e3b3b;
             color: white;
             text-align: center;
             padding: 0 20px;
-            height: 150px;        /* fixed height */
-            overflow: hidden;     /* crops logo */
-            position: relative;
+            height: 160px; 
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-    
-        /* Larger logo, cropped to fit header height */
+
+        /* CROP BOX for logo ONLY */
+        .logo-box {
+            height: 85px; /* controls how much of the logo shows */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* BIGGER LOGO */
         .logo {
-            width: 420px;         /* increase this for bigger appearance */
-            height: 150px;        /* match header height */
-            object-fit: cover;    /* crop instead of shrinking */
-            object-position: center;
-            margin: 0 auto;
+            width: 480px;       /* make larger */
+            height: auto;
+            margin-top: -40px;  /* shifts logo upward slightly */
         }
 
         .tagline {
-            font-size: 22px;
-            margin-top: -5px;
+            font-size: 26px;
+            margin-top: 5px;
             font-weight: 500;
         }
 
         .contact {
-            font-size: 14px;
-            margin-top: 3px;
+            font-size: 15px;
+            margin-top: 2px;
         }
 
         .contact a {
@@ -146,8 +150,13 @@
 <body>
 
 <header>
-    <img src="larkins_logo_transparent.png" alt="Larkins Logo" class="logo">
+    <!-- CROPPED LOGO BOX -->
+    <div class="logo-box">
+        <img src="larkins_logo_transparent.png" alt="Larkins Logo" class="logo">
+    </div>
+
     <div class="tagline">Fresh • Local • Hearty</div>
+
     <div class="contact">
         Contact us: <a href="tel:07902006812">07902 006812</a>
     </div>
@@ -156,7 +165,6 @@
 <section class="review-section">
     <div class="review-title">⭐⭐⭐⭐⭐ Leave us a review!</div>
 
-    <!-- TRUSTINDEX WIDGET -->
     <script defer async src="https://cdn.trustindex.io/loader.js?26894895980a5129d4061a4bd5c"></script>
     <div class="ti-widget" data-ti-widget-id="26894895980a5129d4061a4bd5c"></div>
 </section>
@@ -189,7 +197,6 @@
 <section>
     <h2>Find Us</h2>
 
-    <!-- UPDATED MAP -->
     <iframe 
         class="map-frame"
         src="https://www.google.com/maps?q=Larkins+Grill+Reeves+Way+Chestfield+Whitstable+CT5+3QS&output=embed"
