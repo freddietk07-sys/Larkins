@@ -18,7 +18,7 @@
             background-color: #5e3b3b;
             color: white;
             text-align: center;
-            padding: 30px 20px 25px 20px;
+            padding: 28px 20px 18px 20px;
         }
 
         .logo {
@@ -28,13 +28,13 @@
 
         .tagline {
             font-size: 30px;
-            margin-top: -25px;
+            margin-top: -18px;
             font-weight: 500;
         }
 
         .contact {
             font-size: 16px;
-            margin-top: 5px;
+            margin-top: 6px;
         }
 
         .contact a {
@@ -77,40 +77,49 @@
             margin-top: 15px;
         }
 
-        iframe {
-            width: 100%;
-            height: 300px;
-            border-radius: 10px;
-            border: 2px solid #d3c5c5;
-            margin-top: 15px;
-        }
-
-        /* FOOTER BAR */
-        .footer-bar {
+        /* FOOTER */
+        footer {
             background-color: #5e3b3b;
-            padding: 20px 0;
+            color: white;
+            padding: 25px;
             margin-top: 40px;
         }
 
-        .footer-content {
-            width: 85%;
-            max-width: 900px;
-            margin: auto;
+        .footer-container {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
             gap: 25px;
         }
 
-        .fhrs-badge {
-            width: 180px;
+        .hygiene-badge {
+            width: 150px;
             border-radius: 6px;
         }
 
-        .google-placeholder {
-            color: #e8dede;
+        .google-review {
+            background: #ffffff15;
+            padding: 12px 18px;
+            border-radius: 8px;
+        }
+
+        .google-logo {
             font-size: 16px;
-            opacity: 0.8;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        #google-rating {
+            font-size: 15px;
+        }
+
+        /* MAP */
+        .map-container {
+            width: 100%;
+            height: 330px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #d3c5c5;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -137,25 +146,6 @@
 </section>
 
 <section>
-    <h2>Opening Hours</h2>
-    <p><strong>Mon–Sat:</strong> 7:00am – 2:00pm<br>
-    <strong>Sunday:</strong> Closed</p>
-</section>
-
-<section>
-    <h2>Find Us</h2>
-    <p><strong>Address:</strong> Reeves Way, Chestfield, Whitstable CT5, UK</p>
-
-    <a href="https://www.google.com/maps/dir/?api=1&destination=Reeves+Way+Chestfield+Whitstable+CT5"
-       class="download-btn" target="_blank">🧭 Get Directions</a>
-
-    <iframe
-        src="https://www.google.com/maps?q=Larkins+Snack+Bar+Whitstable&output=embed"
-        loading="lazy">
-    </iframe>
-</section>
-
-<section>
     <h2>Our Menu</h2>
 
     <p>Here is our full food menu:</p>
@@ -165,13 +155,73 @@
     <a href="menu-landscape.jpg" download class="download-btn">📄 Download Menu</a>
 </section>
 
-<!-- NEW FOOTER -->
-<footer class="footer-bar">
-    <div class="footer-content">
-        <img src="IMG_8481.webp" alt="Hygiene Rating 5" class="fhrs-badge">
-        <div class="google-placeholder">Google Reviews badge coming soon</div>
+<section>
+    <h2>Opening Hours</h2>
+    <p><strong>Mon–Sat:</strong> 7:00am – 2:00pm<br>
+    <strong>Sunday:</strong> Closed</p>
+</section>
+
+<section>
+    <h2>Find Us</h2>
+
+    <div class="map-container">
+        <iframe
+            width="100%"
+            height="100%"
+            style="border:0"
+            referrerpolicy="no-referrer-when-downgrade"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY_HERE&q=place_id:ChIJyUOJbpU12UcRXeGWcneX70Y">
+        </iframe>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+
+        <!-- Hygiene Badge -->
+        <img src="IMG_8481.webp" alt="Food Hygiene Rating 5" class="hygiene-badge">
+
+        <!-- Google Reviews Badge -->
+        <div id="google-review-badge" class="google-review">
+            <div class="google-logo">⭐ Google Reviews</div>
+            <div id="google-rating">Loading rating...</div>
+        </div>
+
     </div>
 </footer>
+
+<!-- GOOGLE REVIEWS SCRIPT -->
+<script>
+    async function loadGoogleRating() {
+        const placeId = "ChIJyUOJbpU12UcRXeGWcneX70Y";
+        const apiKey = "YOUR_API_KEY_HERE";  // Replace with your real key
+
+        const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,user_ratings_total&key=${apiKey}`;
+
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+            if (data.result) {
+                const rating = data.result.rating;
+                const count = data.result.user_ratings_total;
+
+                document.getElementById("google-rating").innerText =
+                    `${rating} ★ (${count} reviews)`;
+            } else {
+                document.getElementById("google-rating").innerText =
+                    "Rating unavailable";
+            }
+        } catch (err) {
+            document.getElementById("google-rating").innerText =
+                "Error loading rating";
+        }
+    }
+
+    loadGoogleRating();
+</script>
 
 </body>
 </html>
