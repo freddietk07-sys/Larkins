@@ -13,23 +13,26 @@
             color: #3a2a2a;
         }
 
-        /* HEADER */
+                /* HEADER */
         header {
             background-color: #5e3b3b;
             color: white;
             text-align: center;
-            padding: 5px 20px; /* reduced padding */
-            height: 150px;     /* fixed height */
-            overflow: hidden;  /* stop stretching */
+            padding: 0 20px;
+            height: 150px;        /* fixed height */
+            overflow: hidden;     /* crops logo */
+            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-
+    
+        /* Larger logo, cropped to fit header height */
         .logo {
-            width: 340px;
-            max-height: 100px; /* fits header */
-            object-fit: contain;
+            width: 420px;         /* increase this for bigger appearance */
+            height: 150px;        /* match header height */
+            object-fit: cover;    /* crop instead of shrinking */
+            object-position: center;
             margin: 0 auto;
         }
 
