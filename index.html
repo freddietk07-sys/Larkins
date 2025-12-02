@@ -43,7 +43,7 @@
             font-weight: bold;
         }
 
-        /* SECTIONS */
+        /* MAIN SECTIONS */
         section {
             margin: 30px auto;
             padding: 25px;
@@ -66,7 +66,7 @@
             margin-top: 15px;
         }
 
-        .download-btn, .directions-btn {
+        .download-btn {
             display: inline-block;
             background-color: #5e3b3b;
             color: white;
@@ -79,18 +79,38 @@
 
         iframe {
             width: 100%;
-            height: 350px;
+            height: 300px;
             border-radius: 10px;
-            margin-top: 15px;
             border: 2px solid #d3c5c5;
+            margin-top: 15px;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #4a3a3a;
-            font-size: 14px;
+        /* FOOTER BAR */
+        .footer-bar {
+            background-color: #5e3b3b;
+            padding: 20px 0;
             margin-top: 40px;
+        }
+
+        .footer-content {
+            width: 85%;
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 25px;
+        }
+
+        .fhrs-badge {
+            width: 180px;
+            border-radius: 6px;
+        }
+
+        .google-placeholder {
+            color: #e8dede;
+            font-size: 16px;
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -117,17 +137,6 @@
 </section>
 
 <section>
-    <h2>Our Menu</h2>
-
-    <p>Here is our full food menu. Please note that all menu prices are subject to change and may vary at the point of purchase:</p>
-
-    <img src="menu-landscape.jpg" alt="Larkins Menu" class="menu-image">
-
-    <a href="menu-landscape.jpg" download class="download-btn">📄 Download Menu</a>
-</section>
-
-<!-- MOVED OPENING HOURS ABOVE MAP -->
-<section>
     <h2>Opening Hours</h2>
     <p><strong>Mon–Sat:</strong> 7:00am – 2:00pm<br>
     <strong>Sunday:</strong> Closed</p>
@@ -137,21 +146,31 @@
     <h2>Find Us</h2>
     <p><strong>Address:</strong> Reeves Way, Chestfield, Whitstable CT5, UK</p>
 
-    <iframe 
-        loading="lazy"
-        src="https://www.google.com/maps?q=Larkins+Snack+Bar+Whitstable&output=embed">
-    </iframe>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=Reeves+Way+Chestfield+Whitstable+CT5"
+       class="download-btn" target="_blank">🧭 Get Directions</a>
 
-    <a 
-        class="directions-btn" 
-        href="https://www.google.com/maps/dir/?api=1&destination=Reeves+Way+Chestfield+Whitstable+CT5" 
-        target="_blank">
-        🧭 Get Directions
-    </a>
+    <iframe
+        src="https://www.google.com/maps?q=Larkins+Snack+Bar+Whitstable&output=embed"
+        loading="lazy">
+    </iframe>
 </section>
 
-<footer>
-    © 2024 Larkins Snack Bar
+<section>
+    <h2>Our Menu</h2>
+
+    <p>Here is our full food menu:</p>
+
+    <img src="menu-landscape.jpg" alt="Larkins Menu" class="menu-image">
+
+    <a href="menu-landscape.jpg" download class="download-btn">📄 Download Menu</a>
+</section>
+
+<!-- NEW FOOTER -->
+<footer class="footer-bar">
+    <div class="footer-content">
+        <img src="IMG_8481.webp" alt="Hygiene Rating 5" class="fhrs-badge">
+        <div class="google-placeholder">Google Reviews badge coming soon</div>
+    </div>
 </footer>
 
 </body>
