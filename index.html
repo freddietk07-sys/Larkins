@@ -18,7 +18,7 @@
             background-color: #5e3b3b;
             color: white;
             text-align: center;
-            padding: 28px 20px 18px 20px;
+            padding: 30px 20px 25px 20px;
         }
 
         .logo {
@@ -28,13 +28,13 @@
 
         .tagline {
             font-size: 30px;
-            margin-top: -18px;
+            margin-top: -25px;
             font-weight: 500;
         }
 
         .contact {
             font-size: 16px;
-            margin-top: 6px;
+            margin-top: 5px;
         }
 
         .contact a {
@@ -55,7 +55,6 @@
         }
 
         h2 {
-            font-family: "Georgia", serif;
             margin-top: 0;
             color: #4a3a3a;
         }
@@ -77,49 +76,23 @@
             margin-top: 15px;
         }
 
-        /* FOOTER */
         footer {
-            background-color: #5e3b3b;
+            background: #5e3b3b;
             color: white;
-            padding: 25px;
+            padding: 20px;
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            align-items: center;
             margin-top: 40px;
         }
 
-        .footer-container {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .hygiene-badge {
-            width: 150px;
-            border-radius: 6px;
-        }
-
-        .google-review {
-            background: #ffffff15;
+        #google-review-box {
+            background: #6c4a4a;
             padding: 12px 18px;
             border-radius: 8px;
-        }
-
-        .google-logo {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 4px;
-        }
-
-        #google-rating {
-            font-size: 15px;
-        }
-
-        /* MAP */
-        .map-container {
-            width: 100%;
-            height: 330px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px solid #d3c5c5;
-            margin-top: 15px;
+            font-family: Georgia, serif;
+            text-align: center;
         }
     </style>
 </head>
@@ -128,9 +101,7 @@
 
 <header>
     <img src="larkins_logo_transparent.png" alt="Larkins Logo" class="logo">
-
     <div class="tagline">Fresh • Local • Hearty</div>
-
     <div class="contact">
         Contact us: <a href="tel:07902006812">07902 006812</a>
     </div>
@@ -147,7 +118,6 @@
 
 <section>
     <h2>Our Menu</h2>
-
     <p>Here is our full food menu:</p>
 
     <img src="menu-landscape.jpg" alt="Larkins Menu" class="menu-image">
@@ -157,70 +127,57 @@
 
 <section>
     <h2>Opening Hours</h2>
-    <p><strong>Mon–Sat:</strong> 7:00am – 2:00pm<br>
-    <strong>Sunday:</strong> Closed</p>
+    <p>
+        <strong>Mon–Sat:</strong> 7:00am – 2:00pm<br>
+        <strong>Sunday:</strong> Closed
+    </p>
 </section>
 
 <section>
     <h2>Find Us</h2>
 
-    <div class="map-container">
-        <iframe
-            width="100%"
-            height="100%"
-            style="border:0"
-            referrerpolicy="no-referrer-when-downgrade"
-            loading="lazy"
-            allowfullscreen
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDdEaHYRswI7A7JXqG916LNkGaka-oYdBU&q=place_id:ChIJyUOJbpU12UcRXeGWcneX70Y">
-        </iframe>
-    </div>
+    <!-- GOOGLE MAP (Embed API) -->
+    <iframe
+        width="100%"
+        height="350"
+        style="border:0; border-radius:10px;"
+        loading="lazy"
+        allowfullscreen
+        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJyUOJbpU12UcRXeGWcneX70Y&key=AIzaSyADvJbOZuzagdFsQ90I5MmmLKzBgkdQ_co">
+    </iframe>
 </section>
 
+<!-- FOOTER WITH BADGES -->
 <footer>
-    <div class="footer-container">
+    <!-- Hygiene Rating Badge -->
+    <img src="IMG_8481.webp" alt="Food Hygiene Rating" style="height:70px;">
 
-        <!-- Hygiene Badge -->
-        <img src="IMG_8481.webp" alt="Food Hygiene Rating 5" class="hygiene-badge">
-
-        <!-- Google Reviews Badge -->
-        <div id="google-review-badge" class="google-review">
-            <div class="google-logo">⭐ Google Reviews</div>
-            <div id="google-rating">Loading rating...</div>
-        </div>
-
+    <!-- Google Reviews Live Rating -->
+    <div id="google-review-box">
+        ⭐ Google Reviews<br>
+        <span id="google-rating">Loading…</span>
     </div>
 </footer>
 
 <!-- GOOGLE REVIEWS SCRIPT -->
 <script>
-    async function loadGoogleRating() {
-        const placeId = "ChIJyUOJbpU12UcRXeGWcneX70Y";
-        const apiKey = "AIzaSyDdEaHYRswI7A7JXqG916LNkGaka-oYdBU";  // Replace with your real keyr
+async function loadReview() {
+    try {
+        const response = await fetch("/api/google-reviews");
+        const data = await response.json();
 
-        const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,user_ratings_total&key=${apiKey}`;
-
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-
-            if (data.result) {
-                const rating = data.result.rating;
-                const count = data.result.user_ratings_total;
-
-                document.getElementById("google-rating").innerText =
-                    `${rating} ★ (${count} reviews)`;
-            } else {
-                document.getElementById("google-rating").innerText =
-                    "Rating unavailable";
-            }
-        } catch (err) {
-            document.getElementById("google-rating").innerText =
-                "Error loading rating";
+        if (data.rating) {
+            document.getElementById("google-rating").textContent =
+                `${data.rating} ★ (${data.totalReviews} reviews)`;
+        } else {
+            document.getElementById("google-rating").textContent = "Unavailable";
         }
+    } catch (err) {
+        document.getElementById("google-rating").textContent = "Error loading";
     }
+}
 
-    loadGoogleRating();
+loadReview();
 </script>
 
 </body>
